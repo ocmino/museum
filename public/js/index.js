@@ -85,7 +85,7 @@ function animate() {
 	renderer.render( scene, camera );
 
     moon.rotation.y += 0.01;
-    skybox.rotation.y += 0.005;
+    //skybox.rotation.y += 0.005;
   
 }
 

@@ -1,16 +1,25 @@
 body{
     margin: 0;
+    z-index: 0;
 }
 h1{
     position: absolute;
     color: white;
     margin-left: 25px;
+    z-index: 2;
 }
 p{
     position: absolute;
     color: white;
     margin-top: 65px;
     margin-left: 25px;
-    
-    
+    z-index: 2;
 }
+.container {
+    background: #000;
+    position:absolute;
+    height:100px;
+    width:550px;
+    margin:0 auto;
+    border-radius: 25px;
+  }
