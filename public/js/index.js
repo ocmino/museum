@@ -29,7 +29,7 @@ let boxGeometry = new THREE.BoxGeometry( 100, 100, 100);
 //CREATE THE MOON
 const moonTexture = new THREE.TextureLoader().load('moon.jpg')
 const moon = new THREE.Mesh(
-  new THREE.SphereGeometry(10, 32, 16),
+  new THREE.SphereGeometry(5, 32, 16),
   new THREE.MeshBasicMaterial({
     map: moonTexture
   })
@@ -86,9 +86,9 @@ const sphereFolder = gui.addFolder("Moon")
 sphereFolder.add(moon.rotation, "x", 0, Math.PI * 2, 0.01).name("X rotation")
 sphereFolder.add(moon.rotation, "y", 0, Math.PI * 2, 0.01).name("Y rotation")
 sphereFolder.add(moon.rotation, "z", 0, Math.PI * 2, 0.01).name("Z rotation")
-sphereFolder.add(moon.scale,'x',0.1,10).name("X size")
-sphereFolder.add(moon.scale,'y',0.1,10).name("Y size")
-sphereFolder.add(moon.scale,'z',0.1,10).name("Z size")
+sphereFolder.add(moon.scale,'x',0,10).name("X size")
+sphereFolder.add(moon.scale,'y',0,10).name("Y size")
+sphereFolder.add(moon.scale,'z',0,10).name("Z size")
 sphereFolder.add(moon.material, "wireframe").name("Wireframe")
 
 let palette = {color: [0, 255, 255]}
