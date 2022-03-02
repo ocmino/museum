@@ -1,8 +1,16 @@
+body{
+    margin: 0;
+}
 h1{
     position: absolute;
     color: white;
     margin-left: 25px;
 }
-body{
-    margin: 0;
+p{
+    position: absolute;
+    color: white;
+    margin-top: 65px;
+    margin-left: 25px;
+    
+    
 }
