@@ -16,10 +16,12 @@ p{
     z-index: 2;
 }
 .container {
+
     background: #000;
     position:absolute;
     height:100px;
     width:550px;
-    margin:0 auto;
+    margin-top: 10px;
+    margin-left: 10px;
     border-radius: 25px;
   }
