@@ -1,21 +1,13 @@
-
-
-
-
 // SETTING UP SCENE
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 10000 )
-
-camera.position.x = 200;
-camera.position.y = 0
-
+camera.position.x = 220;
 
 
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 renderer.setPixelRatio(devicePixelRatio);
 document.body.appendChild( renderer.domElement );
-
 
 
 const pointLight = new THREE.PointLight(0xffffff);
@@ -26,21 +18,15 @@ const ambientLight = new THREE.AmbientLight(0x404040);
 scene.add(pointLight, ambientLight);
 
 
+// CONTROLS
+const controls = new THREE.OrbitControls( camera, renderer.domElement );
 
 
-
-
-//CREATE BOX
+//CREATE THE BOX
 let boxGeometry = new THREE.BoxGeometry( 100, 100, 100);
 
 
-
-
-
-
-
-
-//CREATE SPHERE
+//CREATE THE MOON
 const moonTexture = new THREE.TextureLoader().load('moon.jpg')
 const moon = new THREE.Mesh(
   new THREE.SphereGeometry(10, 32, 16),
@@ -56,7 +42,7 @@ function render() {
 
     moon.rotation.y += 0.001;
 
-    //SPHERE ORBIT
+    //MOON ORBIT
     moon.position.x = 25*Math.cos(t) + (0,0,0);
     moon.position.z = 25*Math.sin(t) + (0,0,0);
     moon.position.y = 15*Math.sin(t) + (0,0,0);
@@ -66,18 +52,7 @@ function render() {
 render();
 
 
-
-
-
-
-
-// CONTROLS
-const controls = new THREE.OrbitControls( camera, renderer.domElement );
-
-
-
-
-// CREATING BOX AND APPLYING PICTURES
+// CREATING SKYBOX AND APPLYING PICTURES
 let materialArray = [];
 let texture_ft = new THREE.TextureLoader().load( 'meadow_ft.jpg');
 let texture_bk = new THREE.TextureLoader().load( 'meadow_bk.jpg');
@@ -100,6 +75,7 @@ for (let i = 0; i < 6; i++)
 let skybox = new THREE.Mesh( boxGeometry, materialArray );
 scene.add( skybox );
 animate();
+
 
 // ANIMATION LOOP
 function animate() {
