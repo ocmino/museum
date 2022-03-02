@@ -39,7 +39,7 @@ let boxGeometry = new THREE.BoxGeometry( 100, 100, 100);
 
 
 
-/* 
+
 //CREATE SPHERE
 const moonTexture = new THREE.TextureLoader().load('moon.jpg')
 const moon = new THREE.Mesh(
@@ -63,7 +63,7 @@ function render() {
 
     renderer.render(scene, camera); 
 } 
-render(); */
+render();
 
 
 
@@ -108,7 +108,7 @@ function animate() {
 	controls.update();
 	renderer.render( scene, camera );
 
-    //moon.rotation.y += 0.01;
+    moon.rotation.y += 0.01;
     skybox.rotation.y += 0.005;
   
 }
