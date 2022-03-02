@@ -77,6 +77,35 @@ scene.add( skybox );
 animate();
 
 
+
+
+
+
+const gui = new dat.GUI()
+const sphereFolder = gui.addFolder("Moon")
+sphereFolder.add(moon.rotation, "x", 0, Math.PI * 2, 0.01).name("X rotation")
+sphereFolder.add(moon.rotation, "y", 0, Math.PI * 2, 0.01).name("Y rotation")
+sphereFolder.add(moon.rotation, "z", 0, Math.PI * 2, 0.01).name("Z rotation")
+sphereFolder.add(moon.scale,'x',0.1,10).name("X size")
+sphereFolder.add(moon.scale,'y',0.1,10).name("Y size")
+sphereFolder.add(moon.scale,'z',0.1,10).name("Z size")
+sphereFolder.add(moon.material, "wireframe").name("Wireframe")
+
+let palette = {color: [0, 255, 255]}
+sphereFolder.addColor(palette, 'color').name("Colors").onChange(function(value) {
+    moon.material.color.r = value[0]/255;
+    moon.material.color.g = value[1]/255;
+    moon.material.color.b = value[2]/255;
+})
+sphereFolder.open()
+
+
+
+
+
+
+
+
 // ANIMATION LOOP
 function animate() {
 	requestAnimationFrame( animate );
